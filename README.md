@@ -1,5 +1,10 @@
 Pawtastic
-user-Input Practice
+
+
+User-Input Practice
+
+
 
 #Wire Frame
-![wireframe](./wireFrame/wireframe.PNG)
+
+![wireframe](./wireframe.PNG)
