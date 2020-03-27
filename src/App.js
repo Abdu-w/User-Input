@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {dogName: '', dogBreed: '',age: ''};
 
-export default App;
+    this.handleName = this.handleName.bind(this)
+    this.handleBreed = this.handleBreed.bind(this)
+    this.handleAge= this.handleAge.bind(this)
+  }
+
+  handleName= (event) =>{
+    this.setState({dogName: event.target.value});
+  }
+
+  handleBreed = (event) => { 
+    this.setState({dogBreed: event.target.value});
+  }
+  
+  handleAge = (event) => {
+    this.setState({age: event.target.value});
+  }
+
+
+  render() {
+    return (
+      <form>
+      NAME
+      <input type='text' onChange={this.handleName} />
+      BREED
+      <input type='text' onChange={this.handleBreed} />
+      BirthDay
+      <input type='date' onChange={this.handleAge} />
+
+      </form>
+    );
+  }
+
+
+
+
+}
